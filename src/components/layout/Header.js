@@ -25,7 +25,8 @@ function Header() {
 
             <SearchWrapper>
                 <SearchBarWrapper>
-                    <SearchIcon />
+                    <SearchIconWrapper />
+                    {/* <SearchIcon /> */}
                     <input type='text' placeholder="Search mail" />
                     <ExpandMoreIcon />
                 </SearchBarWrapper>
@@ -57,6 +58,10 @@ const LogoWrapper = styled.div`
     grid-template-columns: 25% auto;
 `;
 
+const SearchIconWrapper = styled(SearchIcon)`
+    color: #5f6368;
+`
+
 const Menu = styled.div`
     display: grid;
     place-items: center;
@@ -81,6 +86,10 @@ const SearchBarWrapper = styled.div`
     height: 45px;
     border-radius: 6px;
 
+    .MuiSvgIcon-root {
+        color: #5f6368;
+    }
+
     input {
         width: 100%;
         height: 30px;
@@ -94,4 +103,12 @@ const SearchBarWrapper = styled.div`
     }
 `;
 
-const IconsWrapper = styled.div``;
+const IconsWrapper = styled.div`
+    margin-left: 8px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+
+    .MuiSvgIcon-root {
+        color: #5f6368;
+    }
+`;
