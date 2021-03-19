@@ -20,8 +20,8 @@ function Main() {
 export default Main
 
 const Wrapper = styled.div`
-    /* display: grid;
-    grid-template-columns: 25% auto 15%; */
+     display: grid;
+    grid-template-columns: 270px auto 50px; 
 `;
 
 
