@@ -26,9 +26,13 @@ const Wrapper = styled.div`
     color: #3c4043;
     font-weight: 500;
     font-size: 0.875rem;
-    box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.49);
+    transition: 0.2s;
+
+    :hover{
+        box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.49);
     -webkit-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.49);
     -moz-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.49);
+    }
 
     p{
         margin: 0px 0px 0px 10px;

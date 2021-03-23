@@ -19,7 +19,7 @@ function Header() {
                     <MenuIcon />
                 </Menu>
                 <Logo>
-                    <img src='https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png' alt="gmail-logo" />
+                    <Img src='https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png' alt="gmail-logo" />
                 </Logo>
             </LogoWrapper>
 
@@ -68,9 +68,15 @@ const Menu = styled.div`
 `;
 
 const Logo = styled.div`
-display: flex;
-height: 45px;
+    display: flex;
+    height: 45px;  
 `;
+
+const Img = styled.img`
+    height: 40px;
+    width: 104px;
+`
+
 
 const SearchWrapper = styled.div`
 

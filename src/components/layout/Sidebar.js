@@ -2,34 +2,54 @@ import React from 'react'
 import styled from 'styled-components';
 import Compose from '../buttons/Compose';
 import { sideBarButtomItems } from '../data/SidebarButtomItems';
+import { bottomIcons } from '../data/BottomIconsData';
+
+
+import VideoCamIcon from '@material-ui/icons/Videocam';
+import KeyboardIcon from '@material-ui/icons/Keyboard';
+import AccoutCircleIcon from '@material-ui/icons/AccountCircle';
+
+
 
 const Sidebar = () => {
     return (
         <Wrapper>
+            <TopSectionWrapper>
+                <ComposeWrapper>
+                    <Compose />
+                </ComposeWrapper>
 
-            <ComposeWrapper>
-                <Compose />
-            </ComposeWrapper>
+                <SideButtonsWrapper>
+                    {
+                        sideBarButtomItems.map(item => (
+                            <SidebarButtomItem>{item.icon} {item.text}</SidebarButtomItem>
+                        ))
+                    }
+                </SideButtonsWrapper>
+            </TopSectionWrapper>
 
-            <SideButtonsWrapper>
-                {
-                    sideBarButtomItems.map(item => (
-                        <SidebarButtomItem>{item.icon} {item.text}</SidebarButtomItem>
-                    ))
-                }
-            </SideButtonsWrapper>
+            <BottomSectionWrapper>
+                <SidebarSectionWrapper>
+                    <Title>Meet</Title>
+                    <p><VideoCamIcon /> Nova Reunião</p>
+                    <p><KeyboardIcon /> Participar em reunião</p>
+                </SidebarSectionWrapper>
 
-            <MeetWrapper>
+                <SidebarSectionWrapper>
+                    <Title>Meet</Title>
+                    <p><AccoutCircleIcon /> Matheus Gonçalves</p>
+                </SidebarSectionWrapper>
 
-            </MeetWrapper>
-
-            <HangoutsWrapper>
-
-            </HangoutsWrapper>
-
-            <BottomIconsWrapper>
-
-            </BottomIconsWrapper>
+                <BottomIconsWrapper>
+                    {
+                        bottomIcons.map(icon => (
+                            <>
+                                {icon}
+                            </>
+                        ))
+                    }
+                </BottomIconsWrapper>
+            </BottomSectionWrapper>
 
         </Wrapper >
     )
@@ -39,8 +59,18 @@ export default Sidebar;
 
 const Wrapper = styled.div`
     border-right: 1px solid lightgray;
-    height: 100vh;
+    height: calc(100vh - 70px);
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`;
+
+const TopSectionWrapper = styled.div`
+`;
+
+const BottomSectionWrapper = styled.div`
+    margin-bottom: 30px;
 `;
 
 const ComposeWrapper = styled.div`
@@ -49,20 +79,32 @@ const ComposeWrapper = styled.div`
     padding: 10px 20px;
 `;
 
-const SideButtonsWrapper = styled.div`
+const SideButtonsWrapper = styled.div``;
 
+const SidebarSectionWrapper = styled.div`
+    border-top: 1px solid lightgray;
+
+    p{
+        color: gray;
+        display: grid;
+        grid-template-columns: 14% auto;
+        height: 30px;
+        align-items: center;
+        padding-left: 25px;
+    }
 `;
 
-const MeetWrapper = styled.div`
-
-`;
-
-const HangoutsWrapper = styled.div`
-
+const Title = styled.h4`
+    color: #202124;
+    padding-left: 25px;
+    margin-bottom: 3px;
+    margin-top: 4px;
 `;
 
 const BottomIconsWrapper = styled.div`
-
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
 `;
 
 const SidebarButtomItem = styled.div`
