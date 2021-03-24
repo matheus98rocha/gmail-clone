@@ -36,7 +36,7 @@ const Sidebar = () => {
                 </SidebarSectionWrapper>
 
                 <SidebarSectionWrapper>
-                    <Title>Meet</Title>
+                    <Title>Hangouts</Title>
                     <p><AccoutCircleIcon /> Matheus Gonçalves</p>
                 </SidebarSectionWrapper>
 
@@ -105,6 +105,15 @@ const BottomIconsWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-self: flex-end;
+    color: gray;
+    border-top: 1px solid lightgray;
+    margin-top: 30px;
+    cursor: pointer;
+
+    .MuiSvgIcon-root{
+        padding: 2px;
+    }
+
 `;
 
 const SidebarButtomItem = styled.div`
