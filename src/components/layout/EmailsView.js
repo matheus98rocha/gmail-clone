@@ -7,6 +7,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import IconButton from '@material-ui/core/IconButton';
 
 import { emailData } from '../../components/temp/EmailData';
+import EmailItem from '../emailItem/EmailItem';
 
 
 const EmailsView = () => {
@@ -25,9 +26,16 @@ const EmailsView = () => {
 
             <EmailsContainer>
                 {
-                    emailData.map(({ starred, from, subject, message, received, read }) => {
-
-                    })
+                    emailData.map(({ starred, from, subject, message, received, read }) => (
+                        <EmailItem 
+                            starred={starred}
+                            from={from}
+                            subject={subject}
+                            message={message}
+                            received={received}
+                            read={read}
+                        />
+                    ))
                 }
             </EmailsContainer>
         </Wrapper>

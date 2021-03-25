@@ -1,9 +1,9 @@
 export const emailData = [
     {
         starred: true,
-        from: 'Google Developer Team',
-        subject: 'Hey Matheus Rocha, congratulations, you were hired by Google!!!',
-        message: 'Google Developer Team',
+        from: 'Google Developer',
+        subject: 'Google Developer Team',
+        message: 'Hey Matheus Rocha, congratulations, you were hired by Google!!!',
         received: '22:24',
         read: true
     }, {
@@ -15,10 +15,10 @@ export const emailData = [
         read: true
     }, {
         starred: false,
-        from: 'Developer',
-        subject: 'Email de teste',
+        from: 'Free Code Camp',
+        subject: 'Take 20% off Codecademy Pro',
         message: 'Yeaahh',
         received: '22:24',
-        read: true
+        read: false
     },
 ]
