@@ -6,6 +6,7 @@ import RefreshIcon from '@material-ui/icons/Refresh';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import IconButton from '@material-ui/core/IconButton';
 
+
 import { emailData } from '../../components/temp/EmailData';
 import EmailItem from '../emailItem/EmailItem';
 
@@ -26,9 +27,10 @@ const EmailsView = () => {
 
             <EmailsContainer>
                 {
-                    emailData.map(({ starred, from, subject, message, received, read }) => (
-                        <EmailItem 
+                    emailData.map(({ starred, important, from, subject, message, received, read }) => (
+                        <EmailItem
                             starred={starred}
+                            important={important}
                             from={from}
                             subject={subject}
                             message={message}
@@ -38,6 +40,7 @@ const EmailsView = () => {
                     ))
                 }
             </EmailsContainer>
+
         </Wrapper>
     )
 }

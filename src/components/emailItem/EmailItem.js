@@ -5,11 +5,13 @@ import { Checkbox } from '@material-ui/core/';
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder'
 import IconButton from '@material-ui/core/IconButton';
+import LabelImportant from '@material-ui/icons/LabelImportant';
+import LabelImportantSharp from '@material-ui/icons/LabelImportantSharp';
 
-
-const EmailItem = ({ starred, from, message, subject, received, read }) => {
+const EmailItem = ({ starred, important, from, message, subject, received, read }) => {
 
     const [star, setStar] = useState(starred);
+    const [importantIcon, setimportantIcon] = useState(important);
 
     return (
 
@@ -21,9 +23,21 @@ const EmailItem = ({ starred, from, message, subject, received, read }) => {
                         <StarIcon htmlColor='#f7cb69' /> :
                         <StarBorderIcon />
                 }
+
+
+
+            </IconButton>
+            <IconButton onClick={() => importantIcon ? setimportantIcon(false) : setimportantIcon(true)} >
+                {
+                    importantIcon ?
+                        <LabelImportantSharp htmlColor='#f7cb69' /> :
+                        <LabelImportant htmlColor='gray' />
+
+                }
+
             </IconButton>
 
-            <p className={!read && 'unread'}>{from}</p>
+            <p className={!read && 'unread'} >{from}</p>
 
             <div>
                 <p className={!read && 'unread'}>{subject}</p> - <span>{message}</span>
@@ -42,7 +56,7 @@ const Wrapper = styled.div`
     border-top: 1px solid lightgray;
 
     display: grid;
-    grid-template-columns: min-content min-content 120px auto min-content;
+    grid-template-columns: min-content min-content min-content 120px auto min-content;
     align-items: center;
     cursor: pointer;
     padding-right: 20px;
@@ -54,10 +68,10 @@ const Wrapper = styled.div`
             color: darkgray;
         }
     }
-
     .unread{
         color: black;
         font-weight: bolder;
     }
 
 `;
+
